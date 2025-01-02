@@ -1,7 +1,5 @@
 {
-    "parent": "lolmcv:block/chests/chest_base",
     "textures": {
-        "wood_type": "lolmcv:entity/chest/mangrove",
         "particle": "minecraft:block/mangrove_planks"
     }
 }

@@ -5,6 +5,7 @@ import io.github.lieonlion.mcv.block.MoreChestBlock;
 import io.github.lieonlion.mcv.block.MoreTrappedChestBlock;
 import io.github.lieonlion.mcv.block.entity.MoreChestBlockEntity;
 import io.github.lieonlion.mcv.block.entity.MoreTrappedChestBlockEntity;
+import net.fabricmc.fabric.api.object.builder.v1.block.entity.FabricBlockEntityTypeBuilder;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.world.level.block.Block;
@@ -24,6 +25,7 @@ public class McvBlockInit {
     public static final MoreChestBlock DARK_OAK_CHEST = new MoreChestBlock(MapColor.COLOR_BROWN, "dark_oak");
     public static final MoreChestBlock MANGROVE_CHEST = new MoreChestBlock(MapColor.COLOR_RED, "mangrove");
     public static final MoreChestBlock CHERRY_CHEST = new MoreChestBlock(MapColor.TERRACOTTA_WHITE, SoundType.CHERRY_WOOD, "cherry");
+    public static final MoreChestBlock PALE_OAK_CHEST = new MoreChestBlock(MapColor.QUARTZ, "pale_oak");
     public static final MoreChestBlock BAMBOO_CHEST = new MoreChestBlock(MapColor.COLOR_YELLOW, SoundType.BAMBOO_WOOD, "bamboo");
     public static final MoreChestBlock CRIMSON_CHEST = new MoreChestBlock(MapColor.CRIMSON_STEM, SoundType.NETHER_WOOD, "crimson");
     public static final MoreChestBlock WARPED_CHEST = new MoreChestBlock(MapColor.WARPED_STEM, SoundType.NETHER_WOOD, "warped");
@@ -36,6 +38,7 @@ public class McvBlockInit {
     public static final MoreTrappedChestBlock DARK_OAK_TRAPPED_CHEST = new MoreTrappedChestBlock(MapColor.COLOR_BROWN, "dark_oak");
     public static final MoreTrappedChestBlock MANGROVE_TRAPPED_CHEST = new MoreTrappedChestBlock(MapColor.COLOR_RED, "mangrove");
     public static final MoreTrappedChestBlock CHERRY_TRAPPED_CHEST = new MoreTrappedChestBlock(MapColor.TERRACOTTA_WHITE, SoundType.CHERRY_WOOD, "cherry");
+    public static final MoreTrappedChestBlock PALE_OAK_TRAPPED_CHEST = new MoreTrappedChestBlock(MapColor.QUARTZ, "pale_oak");
     public static final MoreTrappedChestBlock BAMBOO_TRAPPED_CHEST = new MoreTrappedChestBlock(MapColor.COLOR_YELLOW, SoundType.BAMBOO_WOOD, "bamboo");
     public static final MoreTrappedChestBlock CRIMSON_TRAPPED_CHEST = new MoreTrappedChestBlock(MapColor.CRIMSON_STEM, SoundType.NETHER_WOOD, "crimson");
     public static final MoreTrappedChestBlock WARPED_TRAPPED_CHEST = new MoreTrappedChestBlock(MapColor.WARPED_STEM, SoundType.NETHER_WOOD, "warped");
@@ -54,14 +57,15 @@ public class McvBlockInit {
         registerBlock(DARK_OAK_CHEST, DARK_OAK_TRAPPED_CHEST);
         registerBlock(MANGROVE_CHEST, MANGROVE_TRAPPED_CHEST);
         registerBlock(CHERRY_CHEST, CHERRY_TRAPPED_CHEST);
+        registerBlock(PALE_OAK_CHEST, PALE_OAK_TRAPPED_CHEST);
         registerBlock(BAMBOO_CHEST, BAMBOO_TRAPPED_CHEST);
         registerBlock(CRIMSON_CHEST, CRIMSON_TRAPPED_CHEST);
         registerBlock(WARPED_CHEST, WARPED_TRAPPED_CHEST);
 
         MORE_CHEST_BLOCK_ENTITY = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, "chest_entity",
-                BlockEntityType.Builder.of(MoreChestBlockEntity::new, more_chest.toArray(Block[]::new)).build());
+                FabricBlockEntityTypeBuilder.create(MoreChestBlockEntity::new, more_chest.toArray(Block[]::new)).build());
         MORE_TRAPPED_CHEST_BLOCK_ENTITY = Registry.register(BuiltInRegistries.BLOCK_ENTITY_TYPE, "trapped_chest_entity",
-                BlockEntityType.Builder.of(MoreTrappedChestBlockEntity::new, more_trapped_chest.toArray(Block[]::new)).build());
+                FabricBlockEntityTypeBuilder.create(MoreTrappedChestBlockEntity::new, more_trapped_chest.toArray(Block[]::new)).build());
     }
 
     private static void registerBlock(MoreChestBlock chest, MoreTrappedChestBlock trappedChest) {

@@ -8,7 +8,7 @@
 		"${mod_authors}"
 	],
 	"contact": {
-		"homepage": "https://lieonlion.github.io/LieOnLion/",
+		"homepage": "https://lieonlion.dev/",
 		"sources": "https://github.com/LieOnLion/More-Chest-Variants",
 		"issues": "https://github.com/LieOnLion/More-Chest-Variants/issues"
 	},
@@ -28,7 +28,7 @@
 	],
 	"depends": {
 		"fabricloader": ">=${loader_version}",
-		"minecraft": "~1.21",
+		"minecraft": "~1.21.4",
 		"java": ">=21",
 		"fabric-api": "*",
 		"quad": ">=${quad_version}"

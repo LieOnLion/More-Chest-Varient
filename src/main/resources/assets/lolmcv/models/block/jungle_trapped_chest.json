@@ -1,7 +1,5 @@
 {
-    "parent": "lolmcv:block/chests/chest_base",
     "textures": {
-        "wood_type": "lolmcv:entity/chest/trapped/jungle",
         "particle": "minecraft:block/jungle_planks"
     }
 }

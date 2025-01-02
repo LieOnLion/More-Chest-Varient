@@ -1,9 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "tag": "lieonstudio:chests/trapped"
-    }
+    "#lieonstudio:chests/trapped"
   ],
   "result": {
     "count": 1,

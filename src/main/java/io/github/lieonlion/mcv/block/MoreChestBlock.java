@@ -1,10 +1,13 @@
 package io.github.lieonlion.mcv.block;
 
+import io.github.lieonlion.mcv.MoreChestVariants;
 import io.github.lieonlion.mcv.block.entity.MoreChestBlockEntity;
 import io.github.lieonlion.mcv.init.McvBlockInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.CompoundContainer;
 import net.minecraft.world.Container;
 import net.minecraft.world.MenuProvider;
@@ -33,21 +36,21 @@ public class MoreChestBlock extends ChestBlock {
     public final String chestType;
 
     public MoreChestBlock(MapColor colour, String chestType) {
-        super(Properties.ofFullCopy(Blocks.CHEST).mapColor(colour), () -> McvBlockInit.MORE_CHEST_BLOCK_ENTITY);
+        super(() -> McvBlockInit.MORE_CHEST_BLOCK_ENTITY, Properties.ofFullCopy(Blocks.CHEST).mapColor(colour).setId(ResourceKey.create(Registries.BLOCK, MoreChestVariants.asId(chestType + "_chest"))));
         this.chestType = chestType;
 
         registerMaterialNameRetriever();
     }
 
     public MoreChestBlock(MapColor colour, SoundType sound, String chestType) {
-        super(Properties.ofFullCopy(Blocks.CHEST).mapColor(colour).sound(sound), () -> McvBlockInit.MORE_CHEST_BLOCK_ENTITY);
+        super(() -> McvBlockInit.MORE_CHEST_BLOCK_ENTITY, Properties.ofFullCopy(Blocks.CHEST).mapColor(colour).sound(sound).setId(ResourceKey.create(Registries.BLOCK, MoreChestVariants.asId(chestType + "_chest"))));
         this.chestType = chestType;
 
         registerMaterialNameRetriever();
     }
 
     public MoreChestBlock(BlockBehaviour.Properties properties, Supplier<BlockEntityType<? extends ChestBlockEntity>> supplier, String chestType) {
-        super(properties, supplier);
+        super(supplier, properties);
         this.chestType = chestType;
 
         registerMaterialNameRetriever();

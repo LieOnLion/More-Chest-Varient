@@ -1,9 +1,12 @@
 package io.github.lieonlion.mcv.block;
 
+import io.github.lieonlion.mcv.MoreChestVariants;
 import io.github.lieonlion.mcv.block.entity.MoreTrappedChestBlockEntity;
 import io.github.lieonlion.mcv.init.McvBlockInit;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
+import net.minecraft.core.registries.Registries;
+import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.stats.Stat;
 import net.minecraft.stats.Stats;
@@ -20,14 +23,14 @@ public class MoreTrappedChestBlock extends MoreChestBlock {
     public final String chestType;
 
     public MoreTrappedChestBlock(MapColor colour, String chestType) {
-        super(Properties.ofFullCopy(Blocks.CHEST).mapColor(colour), () -> McvBlockInit.MORE_TRAPPED_CHEST_BLOCK_ENTITY, chestType);
+        super(Properties.ofFullCopy(Blocks.CHEST).mapColor(colour).setId(ResourceKey.create(Registries.BLOCK, MoreChestVariants.asId(chestType + "_trapped_chest"))), () -> McvBlockInit.MORE_TRAPPED_CHEST_BLOCK_ENTITY, chestType);
         this.chestType = chestType;
 
         registerMaterialNameRetriever();
     }
 
     public MoreTrappedChestBlock(MapColor colour, SoundType sound, String chestType) {
-        super(Properties.ofFullCopy(Blocks.CHEST).mapColor(colour).sound(sound), () -> McvBlockInit.MORE_TRAPPED_CHEST_BLOCK_ENTITY, chestType);
+        super(Properties.ofFullCopy(Blocks.CHEST).mapColor(colour).sound(sound).setId(ResourceKey.create(Registries.BLOCK, MoreChestVariants.asId(chestType + "_trapped_chest"))), () -> McvBlockInit.MORE_TRAPPED_CHEST_BLOCK_ENTITY, chestType);
         this.chestType = chestType;
 
         registerMaterialNameRetriever();

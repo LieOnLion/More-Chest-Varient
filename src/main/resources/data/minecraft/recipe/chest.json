@@ -1,9 +1,7 @@
 {
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
-    {
-      "tag": "lieonstudio:chests/normal"
-    }
+    "#lieonstudio:chests/normal"
   ],
   "result": {
     "count": 1,

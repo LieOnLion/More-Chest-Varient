@@ -42,6 +42,13 @@
       }
     },
     {
+      "structures": "#quad:is/pale_oak",
+      "block_replacement": {
+        "targets": "minecraft:chest",
+        "replacement": "lolmcv:pale_oak_chest"
+      }
+    },
+    {
       "structures": "#quad:is/mangrove",
       "block_replacement": {
         "targets": "minecraft:chest",
