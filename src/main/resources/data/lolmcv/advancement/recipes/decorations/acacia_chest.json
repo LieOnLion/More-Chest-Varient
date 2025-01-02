@@ -15,9 +15,7 @@
       "conditions": {
         "items": [
           {
-            "items": [
-              "minecraft:acacia_planks"
-            ]
+            "items": "minecraft:acacia_planks"
           }
         ]
       },
@@ -44,6 +42,5 @@
     "recipes": [
       "lolmcv:acacia_chest"
     ]
-  },
-  "sends_telemetry_event": false
+  }
 }

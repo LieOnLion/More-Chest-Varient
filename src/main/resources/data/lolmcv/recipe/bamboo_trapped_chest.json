@@ -2,12 +2,8 @@
   "type": "minecraft:crafting_shapeless",
   "group": "trapped_chest",
   "ingredients": [
-    {
-      "item": "lolmcv:bamboo_chest"
-    },
-    {
-      "item": "minecraft:tripwire_hook"
-    }
+    "lolmcv:bamboo_chest",
+    "minecraft:tripwire_hook"
   ],
   "result": {
     "count": 1,
